@@ -61,10 +61,10 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default function DemoCard() {
+const DemoCard = ({info}) => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
-  const [popCount, setPopCount] = useState(0);
+  const [popCount, setPopCount] = useState(info.popCount);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -99,22 +99,21 @@ export default function DemoCard() {
               R
             </Avatar>
           }
-          title="Shrimp and Chorizo Paella"
+          title={info.title}
         />
         <CardContent>
           <Typography variant="h5" color="textPrimary" component="header">
-            Designing Timeline: Lessons Learned From Our Journey
+            {info.body}
           </Typography>
         </CardContent>
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-            At Asana, we see the Produc Design team as core to creating positive
-            outcomes for
+            {info.description}
           </Typography>
         </CardContent>
         <CardMedia
           className={classes.media}
-          image="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg"
+          image={info.imageURL}
           title="Paella dish"
         />
         <CardActions disableSpacing>
@@ -139,8 +138,7 @@ export default function DemoCard() {
           <CardContent>
             <Typography paragraph>Method:</Typography>
             <Typography paragraph>
-              Heat 1/2 cup of the broth in a pot until simmering, add saffron
-              and set aside for 10 minutes.
+              {info.method}
             </Typography>
           </CardContent>
         </Collapse>
@@ -148,3 +146,5 @@ export default function DemoCard() {
     </div>
   );
 }
+
+export default DemoCard;
