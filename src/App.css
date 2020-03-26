@@ -1,0 +1,24 @@
+.App {
+  width: 800px;
+  height: 600px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.track-vertical {
+  background-color: rgb(18, 160, 179);
+  width: 4px !important;
+  right: 0px;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.thumb-vertical {
+  background-color: rgb(18, 160, 179);
+  position: fixed !important;
+  margin-left: -9px !important;
+  width: 22px !important;
+  border-radius: 20px;
+  cursor: pointer;
+}
